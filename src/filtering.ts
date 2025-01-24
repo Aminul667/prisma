@@ -25,7 +25,19 @@ const filtering = async () => {
     },
   });
 
-  console.log(orFiltering);
+  const notFiltering = await prisma.post.findMany({
+    where: {
+      NOT: [
+        {
+          title: {
+            contains: "title",
+          },
+        },
+      ],
+    },
+  });
+
+  console.log(notFiltering);
 };
 
 filtering();

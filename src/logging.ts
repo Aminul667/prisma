@@ -14,8 +14,8 @@ prisma.$on("query", (e) => {
 });
 
 const main = async () => {
-  const getAllFromDB = await prisma.post.findMany();
-  //   console.log(getAllFromDB);
+  const getAllFromDB = await prisma.user.findMany();
+  console.log(getAllFromDB);
 };
 
 main();
